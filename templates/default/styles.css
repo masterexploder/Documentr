@@ -59,6 +59,8 @@ blockquote, q {
 }
 
 /* GLOBAL STYLES */
+body, html { height: 100%; }
+#nonFooter { min-height: 100%; position: relative; }
 body {
 	color: #333;
 	font-family: Helvetica, Arial, sans-serif;
@@ -91,12 +93,13 @@ div.header {
 		ul.nav li {
 			float: left;
 			font-size: 20px;
-			padding: 12px 30px 10px 30px;
+			padding: 10px 30px 10px 30px;
 			margin: 0 10px 0 10px;
 		}
 			ul.nav li.index {
 				background: #0A194F;
 				-moz-border-radius: 20px;
+				-webkit-border-radius: 20px;
 			}
 			ul.nav li a {
 				color: #fff;
@@ -110,7 +113,10 @@ div.footer-wrap {
 	background: #212121;
 	color: #fff;
 	font-size: 12px;
+	height: 15px;
+	margin-top: -45px;
 	padding: 15px;
+	position: relative;
 	text-shadow: 2px 2px 2px rgba(30, 30, 30, 0.75);
 }
 	div.footer {

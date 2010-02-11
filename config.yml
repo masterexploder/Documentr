@@ -1,6 +1,7 @@
 # Project Name
 name: "UI Framework"
 introduction: "These guides are designed to make you immediately productive with the UI Framework, and to help you understand how all of the pieces fit together."
+copyright_message: "Copyright &copy; 2010 Ian Selby"
 template: "default"
 output_dir: "output"
 source_dir: "docs"
