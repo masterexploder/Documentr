@@ -1,0 +1,204 @@
+/* GLOBAL RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  word-wrap: break-word;
+}
+
+img {
+  vertical-align: text-bottom;
+}
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+
+blockquote, q {
+  quotes: "" "";
+}
+
+/* GLOBAL STYLES */
+body {
+	color: #333;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px/22px;
+}
+a { color: #11338F; }
+a:hover { text-decoration: none; }
+
+/* HEADER STYLES */
+div.header-wrap {
+	background: #1B326F;
+	border-top: 15px solid #212121;
+	padding: 20px 0 20px 0;
+}
+div.header {
+	margin: 0px auto;
+	width: 960px;
+}
+	h1 {
+		color: #fff;
+		float: left;
+		font-size: 40px;
+		font-weight: normal;
+		text-shadow: 2px 2px 2px rgba(30, 30, 30, 0.75);
+	}
+	ul.nav {
+		float: right;
+		margin: 0;
+	}
+		ul.nav li {
+			float: left;
+			font-size: 20px;
+			padding: 12px 30px 10px 30px;
+			margin: 0 10px 0 10px;
+		}
+			ul.nav li.index {
+				background: #0A194F;
+				-moz-border-radius: 20px;
+			}
+			ul.nav li a {
+				color: #fff;
+				text-decoration: none;
+				text-shadow: 2px 2px 2px rgba(30, 30, 30, 0.75);
+			}
+			ul.nav li a:hover { text-decoration: underline; }
+
+/* FOOTER STYLES */
+div.footer-wrap {
+	background: #212121;
+	color: #fff;
+	font-size: 12px;
+	padding: 15px;
+	text-shadow: 2px 2px 2px rgba(30, 30, 30, 0.75);
+}
+	div.footer {
+		margin: 0px auto;
+		width: 960px;
+	}
+		div.footer .copyright { float: left; }
+		div.footer .powered-by { float: right; }
+		div.footer a {
+			color: #6FB7DF;
+			text-decoration: none;
+		}
+		div.footer a:hover { color: #D4E9F6; }
+
+/* INTRO STYLES */		
+div.intro-wrap {
+	background: #D4E9F6;
+}
+div.intro {
+	margin: 0px auto;
+	padding: 30px 0 30px 0;
+	width: 960px;
+}
+	div.intro h2 {
+		font-size: 30px;
+		font-weight: bold;
+		margin-bottom: 10px;
+		text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.55);
+	}
+	div.intro p {
+		font-size: 18px;
+		line-height: 22px;
+		width: 600px;
+	}
+	
+	div.intro div.disclaimer {
+		background: #fff;
+		float: right;
+		padding: 20px;
+		position: relative;
+		width: 250px;
+	}
+
+/* MAIN STYLES */
+div.body {
+	margin: 0px auto;
+	padding: 30px 0 30px 0;
+	width: 960px;
+}
+
+/* SECTION INDEX STYLES */
+div.section {
+	margin-bottom: 20px;
+	padding: 0 0 10px 0;
+	width: 600px;
+}
+	div.section h3 {
+		font-size: 25px;
+		font-weight: bold;
+		margin-bottom: 15px;
+	}
+	div.section dl {
+		border-bottom: 1px solid #c4c4c4;
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+	}
+	div.section dl dt {
+		font-size: 18px;
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+	div.section dl dd {
+		font-size: 15px;
+		line-height: 18px;
+	}
+		
+/* MISC STYLES */
+.clearfix {
+  clear: both;
+  height: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+.ticket {
+	background: #fff9d8 url(images/tab_yellow.gif) no-repeat left top;
+	font-size: 13px;
+	line-height: 16px;
+	padding: 15px 15px 15px 45px;
+}
