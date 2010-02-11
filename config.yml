@@ -11,11 +11,9 @@ guides:
         Getting Started:
             source_file: "getting_started.md"
             description: "Everything you need to know to get started with the framework"
-    # Models:
-    #     
-    # Views:
-    #     
-    # Controllers:
+        Application Layout:
+            source_file: "application_layout.md"
+            description: "Learn how an application built with the UI Framework is laid out and what all the directories are for"
         
     Routing:
         Route Basics:

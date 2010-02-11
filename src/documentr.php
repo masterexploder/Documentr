@@ -1,48 +1,27 @@
 <?php
 
-// define a few important paths
-define('DOCUMENTR_ROOT', dirname(dirname(__FILE__)));
-define('SRC_ROOT', DOCUMENTR_ROOT . '/src');
-define('LIB_ROOT', SRC_ROOT . '/lib');
+require_once dirname(__FILE__) . '/Documentr.inc.php';
 
-// include our lib functions...
-require_once LIB_ROOT . '/markdown/markdown.php';
-require_once LIB_ROOT . '/sfy_yaml/sfYaml.php';
+$start = microtime_float();
 
-$config	= sfYaml::load(DOCUMENTR_ROOT . '/config.yml');
-$guides	= array();
-$index	= array();
+// get everything set up
+Documentr::init();
 
-// print_r($config);
-
-echo "\n>>> Creating Documentation For {$config['name']} <<<\n";
-
-// parse the config into guides and an index...
-foreach ($config['guides'] as $section => $group)
-{
-	$indexArray	= array();
-	
-	foreach ($group as $guide => $data)
-	{
-		$guides[$guide] 	= $data;
-		$indexArray[] 		= $guide;
-	}
-	
-	$index[$section] = $indexArray;
-}
+// parse the config into guides and an index
+echo "\n>>> Creating Documentation For " . Documentr::$config['name'] . " <<<\n\n";
+Documentr::parseConfig();
 
 // we've passed the config / parse, so we'll clear the output directory
-shell_exec('rm -rf ' . $config['output_dir'] . '/*');
-shell_exec('cp -f ' . DOCUMENTR_ROOT . '/templates/' . $config['template'] . '/styles.css ' . $config['output_dir']);
-shell_exec('cp -rf ' . DOCUMENTR_ROOT . '/templates/' . $config['template'] . '/images ' . $config['output_dir']);
+echo "Clearing output directory...";
+Documentr::cleanOutputDir();
+echo "\tdone\n";
 
-// build the home page
-ob_start();
-include  DOCUMENTR_ROOT . '/templates/' . $config['template'] . '/home.php';
-$contents = ob_get_contents();
-ob_end_clean();
+// build the homepage
+echo "Building home page...";
+Documentr::buildHome();
+echo "\tdone\n";
 
-// and write it...
-$handle = fopen($config['output_dir'] . '/index.html', 'w');
-fwrite($handle, $contents);
-fclose($handle);
+$end = microtime_float(); 
+echo "\n----------------------------\n";
+echo "Docs generated in " . round($end-$start, 5) . " seconds.\n";
+echo "\n";

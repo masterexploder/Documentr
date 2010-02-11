@@ -47,7 +47,7 @@
 		<?php foreach ($guide as $guideName): ?>
 		<?php $guideInfo = $guides[$guideName]; ?>
 		<dl>
-			<dt><a href="#"><?php echo $guideName; ?></a></dt>
+			<dt><a href="<?php echo str_replace('.md', '.html', $guideInfo['source_file']); ?>"><?php echo $guideName; ?></a></dt>
 			<?php if (isset($guideInfo['wip']) && $guideInfo['wip'] == true): ?>
 			<dd class="ticket"><?php echo $guideInfo['description']; ?></dd>
 			<?php else: ?>
