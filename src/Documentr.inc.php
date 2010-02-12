@@ -45,6 +45,59 @@ class Documentr
 		shell_exec('cp -rf ' . DOCUMENTR_ROOT . '/templates/' . self::$config['template'] . '/images ' . self::$config['output_dir']);
 	}
 	
+	public static function buildGuides ()
+	{
+		foreach (self::$guides as $name => $guide)
+		{
+			if (file_exists(self::$config['source_dir'] . '/' . $guide['source_file']))
+			{
+				echo " [build] $name...";
+				
+				self::$guides[$name]['exists'] = true;
+				
+				$contents 	= file_get_contents(self::$config['source_dir'] . '/' . $guide['source_file']);
+				$title		= $name;
+				$header		= null;
+				$body		= null;
+				
+				// check for an introduction / body
+				if (stristr($contents, '-----BODY-----') !== false)
+				{
+					$parts = explode('-----BODY-----', $contents);
+					
+					$header = $parts[0];
+					$body	= $parts[1];
+				}
+				else
+				{
+					$body	= $contents;
+				}
+				
+				$header = ($header === null) ? '' : Markdown($header);
+				$body	= Markdown($body);
+				$config	= self::$config;
+				$index	= self::$index;
+				$guides	= self::$guides;
+				
+				ob_start();
+				include  DOCUMENTR_ROOT . '/templates/' . self::$config['template'] . '/guide.php';
+				$contents = ob_get_contents();
+				ob_end_clean();
+				
+				$handle = fopen(self::$config['output_dir'] . '/' . str_replace('.md', '.html', $guide['source_file']), 'w');
+				fwrite($handle, $contents);
+				fclose($handle);
+				
+				echo "\tdone\n";
+			}
+			else
+			{
+				echo " [skip] $name \n";
+				self::$guides[$name]['exists'] = false;
+			}
+		}
+	}
+	
 	public static function buildHome ()
 	{
 		// make the static items available locally...

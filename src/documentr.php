@@ -16,6 +16,10 @@ echo "Clearing output directory...";
 Documentr::cleanOutputDir();
 echo "\tdone\n";
 
+echo "Building guide pages...\n";
+// build the guide pages
+Documentr::buildGuides();
+
 // build the homepage
 echo "Building home page...";
 Documentr::buildHome();

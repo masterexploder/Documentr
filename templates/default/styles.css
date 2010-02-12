@@ -16,7 +16,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-size: 100%;
   font-family: inherit;
   vertical-align: baseline;
-  word-wrap: break-word;
 }
 
 img {
@@ -79,7 +78,7 @@ div.header {
 	margin: 0px auto;
 	width: 960px;
 }
-	h1 {
+	div.header h1 {
 		color: #fff;
 		float: left;
 		font-size: 40px;
@@ -166,6 +165,74 @@ div.body {
 	padding: 30px 0 30px 0;
 	width: 960px;
 }
+div.content {
+	margin-bottom: 20px;
+	padding: 0 0 10px 0;
+	width: 600px;
+}
+	div.content h1, h2, h3, h4 { margin-bottom: 10px; }
+	div.content h1 { font-size: 25px; font-weight: bold; }
+	div.content h2 { font-size: 20px; font-weight: bold; }
+	div.content h3 { font-size: 18px; font-weight: bold; }
+	div.content h4 { font-size: 16px; font-weight: bold; }
+	
+	div.content p {
+		font-size: 14px;
+		line-height: 20px;
+		margin-bottom: 10px;
+	}
+	
+	div.content strong { font-weight: bold; }
+	div.content em { font-style: italic; }
+	div.content ul {
+		list-style-type: disc;
+		margin: 10px;
+		padding: 0 0 5px 30px;
+	}
+	div.content ol {
+		list-style-type: decimal;
+		margin: 10px;
+		padding: 0 0 5px 30px;
+	}
+	div.content ul li,
+	div.content ol li {
+		color: #333;
+		font-size: 13px;
+		line-height: 18px;
+		margin-bottom: 5px;
+	}
+	
+	div.content code,
+	div.content pre { 
+		font-family: Monaco, "Courier New", serif; 
+		font-size: 13px; 
+		overflow: auto;
+		white-space: pre;
+	}
+	
+	div.content pre {
+		background: #eee url(images/tab_grey.gif) no-repeat left top;
+		line-height: 16px;
+		margin-bottom: 15px;
+		padding: 10px 10px 10px 46px;
+	}
+		div.content pre code {
+			display: block;
+			min-height: 40px;
+		}
+	
+	div.content blockquote {
+		background: #eee;
+		font-size: 13px;
+		line-height: 16px;
+		margin-bottom: 10px;
+		padding: 10px;
+	}
+		div.content blockquote.ticket { background: #fff9d8 url(images/tab_yellow.gif) no-repeat left top; padding: 10px 10px 10px 45px; }
+		div.content blockquote.note { background: #fff9d8 url(images/tab_note.gif) no-repeat left top; padding: 10px 10px 10px 45px; }
+		div.content blockquote.info { background: #D5E9F6 url(images/tab_info.gif) no-repeat left top; padding: 10px 10px 10px 45px; }
+		div.content blockquote.warning { background: #f9d9d8 url(images/tab_red.gif) no-repeat left top; padding: 10px 10px 10px 45px; }
+	
 
 /* SECTION INDEX STYLES */
 div.section {
