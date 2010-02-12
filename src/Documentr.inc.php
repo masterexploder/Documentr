@@ -14,6 +14,7 @@ class Documentr
 	public static $config;
 	public static $index;
 	public static $guides;
+	public static $numGuides = 0;
 	
 	public static function init ()
 	{
@@ -32,9 +33,22 @@ class Documentr
 			{
 				self::$guides[$guide] 	= $data;
 				$indexArray[] 			= $guide;
+				self::$numGuides++;
 			}
 
 			self::$index[$section] = $indexArray;
+		}
+		
+		foreach (self::$guides as $name => $guide)
+		{
+			if (file_exists(self::$config['source_dir'] . '/' . $guide['source_file']))
+			{
+				self::$guides[$name]['exists'] = true;
+			}
+			else
+			{
+				self::$guides[$name]['exists'] = false;
+			}
 		}
 	}
 	
@@ -43,19 +57,25 @@ class Documentr
 		shell_exec('rm -rf ' . self::$config['output_dir'] . '/*');
 		shell_exec('cp -f ' . DOCUMENTR_ROOT . '/templates/' . self::$config['template'] . '/styles.css ' . self::$config['output_dir']);
 		shell_exec('cp -rf ' . DOCUMENTR_ROOT . '/templates/' . self::$config['template'] . '/images ' . self::$config['output_dir']);
+		shell_exec('cp -rf ' . DOCUMENTR_ROOT . '/templates/' . self::$config['template'] . '/scripts ' . self::$config['output_dir']);
+		
+		if (file_exists(DOCUMENTR_ROOT . '/' . self::$config['source_dir'] . '/images'))
+		{
+			shell_exec('cp -rf ' . DOCUMENTR_ROOT . '/' . self::$config['source_dir'] . '/images ' . self::$config['output_dir']);
+		}
 	}
 	
 	public static function buildGuides ()
 	{
 		foreach (self::$guides as $name => $guide)
 		{
-			if (file_exists(self::$config['source_dir'] . '/' . $guide['source_file']))
+			$guideInfo = $guide;
+			
+			if ($guideInfo['exists'] == true)
 			{
 				echo " [build] $name...";
 				
-				self::$guides[$name]['exists'] = true;
-				
-				$contents 	= file_get_contents(self::$config['source_dir'] . '/' . $guide['source_file']);
+				$contents 	= file_get_contents(self::$config['source_dir'] . '/' . $guideInfo['source_file']);
 				$title		= $name;
 				$header		= null;
 				$body		= null;
@@ -85,8 +105,8 @@ class Documentr
 				include  DOCUMENTR_ROOT . '/templates/' . self::$config['template'] . '/guide.php';
 				$contents = ob_get_contents();
 				ob_end_clean();
-			
-				$handle = fopen(self::$config['output_dir'] . '/' . str_replace('.md', '.html', $guide['source_file']), 'w');
+				
+				$handle = fopen(self::$config['output_dir'] . '/' . str_replace('.md', '.html', $guideInfo['source_file']), 'w');
 				fwrite($handle, $contents);
 				fclose($handle);
 				
@@ -95,7 +115,6 @@ class Documentr
 			else
 			{
 				echo " [skip] $name \n";
-				self::$guides[$name]['exists'] = false;
 			}
 		}
 	}
@@ -139,12 +158,6 @@ class Documentr
 			{
 				$toc[$currentKey][] = $name;
 			}
-			// 
-			// $toc[$name] = array
-			// (
-			// 	'id' => strtolower(str_replace(' ', '-', preg_replace('/[^a-zA-Z0-9 -]/', '', $name))),
-			// 	'level' => $level
-			// );
 		}
 		
 		foreach ($toc as $key => $value)

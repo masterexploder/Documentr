@@ -107,6 +107,52 @@ div.header {
 			}
 			ul.nav li a:hover { text-decoration: underline; }
 
+	div.header div.guide-index {
+		background: #0A194F;
+		color: #fff;
+		font-size: 13px;
+		line-height: 18px;
+		padding: 10px 30px 10px 30px;
+		position: absolute;
+		z-index: 101;
+		-moz-border-radius: 20px;
+		-moz-box-shadow: 3px 3px 5px rgba(30, 30, 30, 0.45);
+		-webkit-border-radius: 20px;
+		-webkit-box-shadow: 3px 3px 5px rgba(30, 30, 30, 0.45);
+	}
+		div.header div.guide-index h2 {
+			border-bottom: 1px solid #6fb7df;
+			font-size: 20px;
+			margin-bottom: 5px;
+			padding: 1px 0 10px 0;
+			text-align: right;
+		}
+			div.header div.guide-index h2 a {
+				color: #fff;
+				text-decoration: none;
+				text-shadow: 2px 2px 2px rgba(30, 30, 30, 0.75);
+			}
+				div.header div.guide-index h2 a:hover { text-decoration: underline; }
+		div.header div.guide-index h3 {
+			color: #6FB7DF;
+			font-size: 14px;
+			font-weight: bold;
+			margin: 5px 0 5px 0;
+			text-shadow: 1px 1px 1px rgba(30, 30, 30, 0.55);
+		}
+		div.header div.guide-index a { color: #fff; }
+		
+		div.header div.guide-index div.left-col {
+			float: left;
+			margin: 10px;
+			width: 200px;
+		}
+		div.header div.guide-index div.right-col {
+			float: right;
+			margin: 10px;
+			width: 200px;
+		}
+
 /* FOOTER STYLES */
 div.footer-wrap {
 	background: #212121;
