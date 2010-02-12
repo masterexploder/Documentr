@@ -1,0 +1,30 @@
+# Project Name
+name: "UI Framework"
+introduction: "These guides are designed to make you immediately productive with the UI Framework, and to help you understand how all of the pieces fit together."
+copyright_message: "Copyright &copy; 2010 Ian Selby"
+template: "default"
+output_dir: "output"
+source_dir: "docs"
+
+guides:
+    Start Here:
+        Getting Started:
+            source_file: "getting_started.md"
+            description: "Everything you need to know to get started with the framework"
+        Application Layout:
+            source_file: "application_layout.md"
+            description: "Learn how an application built with the UI Framework is laid out and what all the directories are for"
+        
+    Routing:
+        Route Basics:
+            source_file: "route_basics.md"
+            description: "The ins and outs of routes and how to use and define them"
+        Route Helper Functions:
+            source_file: "route_helpers.md"
+            description: "Helper functions related to routes that are available for use in your templates"
+    
+    Digging Deeper:
+        Internationalization API:
+            source_file: "i18n_api.md"
+            description: "This guide covers how to add internationalization to your applications.  Your application will be able to translate content to different languages, use correct date/time formats, etc."
+            wip: true
