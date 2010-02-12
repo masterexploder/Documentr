@@ -158,6 +158,28 @@ div.intro {
 		position: relative;
 		width: 250px;
 	}
+	div.toc h3 {
+		background: transparent url(images/chapters_icon.gif) no-repeat left top;
+		font-size: 20px;
+		font-weight: bold;
+		padding: 7px 0px 5px 40px;
+	}
+	div.toc ol {
+		font-size: 14px;
+		font-weight: bold;
+		list-style-type: decimal;
+		margin: 10px 10px 10px 25px;
+	}
+	div.toc ol li {
+		line-height: 18px;
+		margin-bottom: 8px;
+	}
+	div.toc ol ul {
+		font-size: 14px;
+		font-weight: normal;
+		list-style-type: disc;
+		margin: 8px 10px 0px 15px;
+	}
 
 /* MAIN STYLES */
 div.body {

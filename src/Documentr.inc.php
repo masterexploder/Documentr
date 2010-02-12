@@ -79,11 +79,13 @@ class Documentr
 				$index	= self::$index;
 				$guides	= self::$guides;
 				
+				list($body, $toc) = self::buildToc($body);
+				
 				ob_start();
 				include  DOCUMENTR_ROOT . '/templates/' . self::$config['template'] . '/guide.php';
 				$contents = ob_get_contents();
 				ob_end_clean();
-				
+			
 				$handle = fopen(self::$config['output_dir'] . '/' . str_replace('.md', '.html', $guide['source_file']), 'w');
 				fwrite($handle, $contents);
 				fclose($handle);
@@ -113,6 +115,51 @@ class Documentr
 		$handle = fopen(self::$config['output_dir'] . '/index.html', 'w');
 		fwrite($handle, $contents);
 		fclose($handle);
+	}
+	
+	protected static function buildToc ($contents)
+	{
+		preg_match_all('/<h([1-4])>(.*?)<\/h[1-4]>/', $contents, $matches);
+		
+		$priorLevel = 1;
+		$toc		= array();
+		$currentKey	= null;
+		
+		foreach ($matches[0] as $key => $value)
+		{
+			$level 	= $matches[1][$key];
+			$name	= $matches[2][$key];
+			
+			if ($level == 1)
+			{
+				$toc[$name] = array();
+				$currentKey = $name;
+			}
+			elseif ($level == 2)
+			{
+				$toc[$currentKey][] = $name;
+			}
+			// 
+			// $toc[$name] = array
+			// (
+			// 	'id' => strtolower(str_replace(' ', '-', preg_replace('/[^a-zA-Z0-9 -]/', '', $name))),
+			// 	'level' => $level
+			// );
+		}
+		
+		foreach ($toc as $key => $value)
+		{
+			$id			= strtolower(str_replace(' ', '-', preg_replace('/[^a-zA-Z0-9 -]/', '', $key)));
+			$contents	= str_replace('<h1>' . $key . '</h1>', '<h1 id="' . $id . '">' . $key . '</h1>', $contents);
+			
+			foreach ($value as $name)
+			{
+				$id			= strtolower(str_replace(' ', '-', preg_replace('/[^a-zA-Z0-9 -]/', '', $name)));
+				$contents	= str_replace('<h2>' . $name . '</h2>', '<h2 id="' . $id . '">' . $name . '</h2>', $contents);
+			}
+		}
+		
+		return array($contents, $toc);
 	}
 }
 
