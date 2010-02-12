@@ -1,6 +1,6 @@
 # Documentr
 
-Documentr is a documentation generator that is inspired by the Rails Guides (http://guides.rubyonrails.org).
+Documentr is a documentation generator that is inspired by the [Rails Guides](http://guides.rubyonrails.org).
 Basically, I've had the need for a long time to create documentation for various projects, and found there weren't
 really any good solutions out there.  One day, while perusing the Rails Guides reading about Rails 3, it occurred to me
 that not only were they sexy, but they are laid out and organized quite well.
@@ -12,12 +12,12 @@ get the gist of things.  If not, sit tight, I'm gonna have official docs soon.
 
 ## Credits
 
-This program is inspired HEAVILY by the Rails Guides: http://guides.rubyonrails.org.
+This program is inspired HEAVILY by the [Rails Guides](http://guides.rubyonrails.org).
 
 It's also made possible by the following two libraries:
 
-* PHP Markdown & Extra: http://michelf.com/projects/php-markdown
-* Symfony YAML Component: http://components.symfony-project.org/yaml/
+* [PHP Markdown & Extra](http://michelf.com/projects/php-markdown)
+* [Symfony YAML Component](http://components.symfony-project.org/yaml/)
 
 ## License
 
