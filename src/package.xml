@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.8.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+	<name>Documentr</name>
+	<channel>pear.gxdlabs.com</channel>
+	<summary>Generate Sexy Documentation From Markdown</summary>
+	<description>
+		Generate Sexy Documentation From Markdown
+	</description>
+	
+	<lead>
+		<name>Ian Selby</name>
+		<user>masterexploder</user>
+		<email>ian@gen-x-design.com</email>
+		<active>yes</active>
+	</lead>
+	
+	<date>2010-02-12</date>
+	<time>16:00:00</time>
+	
+	<version>
+		<release>0.1.0</release>
+		<api>0.1.0</api>
+	</version>
+	
+	<stability>
+		<release>beta</release>
+		<api>beta</api>
+	</stability>
+	
+	<license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
+	<notes>-</notes>
+	
+	<contents>
+		<dir name="/" baseinstalldir="Documentr">
+			<file name="Documentr.inc.php" role="php" />
+			<file name="documentr.php" role="php" />
+			<file baseinstalldir="/" name="documentr" role="script" />
+			
+			<dir name="lib">
+				<dir name="markdown">
+					<file name="markdown.php" role="php" />
+				</dir>
+				<dir name="sfy_yaml">
+					<file name="LICENSE" role="php" />
+					<file name="sfYaml.php" role="php" />
+					<file name="sfYamlDumper.php" role="php" />
+					<file name="sfYamlInline.php" role="php" />
+					<file name="sfYamlParser.php" role="php" />
+				</dir>
+			</dir>
+			
+			<dir name="templates">
+				<dir name="default">
+					<file name="footer.php" role="php" />
+					<file name="guide.php" role="php" />
+					<file name="header.php" role="php" />
+					<file name="home.php" role="php" />
+					<file name="styles.css" role="php" />
+					
+					<dir name="images">
+						<file name="chapters_icon.gif" role="php" />
+						<file name="tab_grey.gif" role="php" />
+						<file name="tab_info.gif" role="php" />
+						<file name="tab_note.gif" role="php" />
+						<file name="tab_red.gif" role="php" />
+						<file name="tab_yellow.gif" role="php" />
+					</dir>
+					
+					<dir name="scripts">
+						<file name="mootools-1.2.4-core-yc.js" role="php" />
+						<file name="mootools-1.2.4.4-more.js" role="php" />
+					</dir>
+				</dir>
+			</dir>
+		</dir>
+	</contents>
+
+	<dependencies>
+		<required>
+			<php>
+				<min>5.2.0</min>
+			</php>
+			<pearinstaller>
+				<min>1.4.0</min>
+			</pearinstaller>
+		</required>
+	</dependencies>
+	
+	<phprelease />
+</package>
