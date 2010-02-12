@@ -1,0 +1,5 @@
+#!/usr/bin/php
+<?php
+define('DOCUMENTR_ROOT', getcwd());
+
+include_once 'Documentr/documentr.php';

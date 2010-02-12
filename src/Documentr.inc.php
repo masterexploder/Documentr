@@ -1,8 +1,11 @@
 <?php
 
 // define a few important paths
-define('DOCUMENTR_ROOT', dirname(dirname(__FILE__)));
-define('SRC_ROOT', DOCUMENTR_ROOT . '/src');
+if (!defined('DOCUMENTR_ROOT'))
+{
+	define('DOCUMENTR_ROOT', (dirname(__FILE__)));
+}
+define('SRC_ROOT', dirname(__FILE__));
 define('LIB_ROOT', SRC_ROOT . '/lib');
 
 // include our lib functions...
@@ -18,6 +21,12 @@ class Documentr
 	
 	public static function init ()
 	{
+		if (!file_exists(DOCUMENTR_ROOT . '/config.yml'))
+		{
+			echo "\nCould not find config.yml file.\n\n";
+			exit;
+		}
+		
 		self::$config	= sfYaml::load(DOCUMENTR_ROOT . '/config.yml');
 		self::$guides	= array();
 		self::$index	= array();
@@ -55,9 +64,9 @@ class Documentr
 	public static function cleanOutputDir ()
 	{
 		shell_exec('rm -rf ' . self::$config['output_dir'] . '/*');
-		shell_exec('cp -f ' . DOCUMENTR_ROOT . '/templates/' . self::$config['template'] . '/styles.css ' . self::$config['output_dir']);
-		shell_exec('cp -rf ' . DOCUMENTR_ROOT . '/templates/' . self::$config['template'] . '/images ' . self::$config['output_dir']);
-		shell_exec('cp -rf ' . DOCUMENTR_ROOT . '/templates/' . self::$config['template'] . '/scripts ' . self::$config['output_dir']);
+		shell_exec('cp -f '  . SRC_ROOT . '/templates/' . self::$config['template'] . '/styles.css ' . self::$config['output_dir']);
+		shell_exec('cp -rf ' . SRC_ROOT . '/templates/' . self::$config['template'] . '/images ' . self::$config['output_dir']);
+		shell_exec('cp -rf ' . SRC_ROOT . '/templates/' . self::$config['template'] . '/scripts ' . self::$config['output_dir']);
 		
 		if (file_exists(DOCUMENTR_ROOT . '/' . self::$config['source_dir'] . '/images'))
 		{
@@ -102,7 +111,7 @@ class Documentr
 				list($body, $toc) = self::buildToc($body);
 				
 				ob_start();
-				include  DOCUMENTR_ROOT . '/templates/' . self::$config['template'] . '/guide.php';
+				include  SRC_ROOT . '/templates/' . self::$config['template'] . '/guide.php';
 				$contents = ob_get_contents();
 				ob_end_clean();
 				
@@ -127,7 +136,7 @@ class Documentr
 		$guides	= self::$guides;
 		
 		ob_start();
-		include  DOCUMENTR_ROOT . '/templates/' . self::$config['template'] . '/home.php';
+		include  SRC_ROOT . '/templates/' . self::$config['template'] . '/home.php';
 		$contents = ob_get_contents();
 		ob_end_clean();
 		
