@@ -15,11 +15,11 @@
 	</lead>
 	
 	<date>2010-02-12</date>
-	<time>16:00:00</time>
+	<time>17:00:00</time>
 	
 	<version>
-		<release>0.1.0</release>
-		<api>0.1.0</api>
+		<release>0.1.1</release>
+		<api>0.1.1</api>
 	</version>
 	
 	<stability>
