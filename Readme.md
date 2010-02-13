@@ -21,4 +21,4 @@ It's also made possible by the following two libraries:
 
 ## License
 
-This software is licensed under the MIT License, so have at it :)
+This software is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php), so have at it :)

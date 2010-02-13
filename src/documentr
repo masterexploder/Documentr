@@ -1,5 +1,15 @@
 #!/usr/bin/php
 <?php
-define('DOCUMENTR_ROOT', getcwd());
+/**
+ * This file is a part of the Documentr package.
+ * (c) 2010 Ian Selby <ian@gen-x-design.com>
+ *
+ * For more information, please visit the project home page at
+ * http://documentr.gxdlabs.com
+ *
+ */
 
+// figure out where we're at...
+define('DOCUMENTR_ROOT', getcwd());
+// include the Documentr base processor file
 include_once 'Documentr/documentr.php';

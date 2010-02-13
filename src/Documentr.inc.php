@@ -1,4 +1,18 @@
 <?php
+/**
+ * Documentr Class Definition File
+ *
+ * This file contains the class definition for the Documentr class.
+ *
+ * @package Documentr
+ * @author Ian Selby <ian@gen-x-design.com>
+ * @copyright 2010 Ian Selby
+ * @license http://www.opensource.org/licenses/mit-license.php
+ * @version 0.1.0
+ * @link http://documentr.gxdlabs.com
+ *
+ */
+
 
 // define a few important paths
 if (!defined('DOCUMENTR_ROOT'))
@@ -12,13 +26,57 @@ define('LIB_ROOT', SRC_ROOT . '/lib');
 require_once LIB_ROOT . '/markdown/markdown.php';
 require_once LIB_ROOT . '/sfy_yaml/sfYaml.php';
 
+/**
+ * Documentr Class
+ *
+ * This is the meat of the whole Documentr package.  It contains all the functions that parse and
+ * build your documentation
+ * 
+ * @package Documentr
+ */
 class Documentr
 {
+	/**
+	 * The parsed configs
+	 *
+	 * This is loaded from the config.yml file
+	 *
+	 * @var array
+	 */
 	public static $config;
+	/**
+	 * The guide index
+	 *
+	 * This array contains the parsed "index" of the guides.  That is, the groups and actual
+	 * guides themselves are organized into an index and used to build the home page and the "Guide Index"
+	 * goodness on all the doc pages
+	 *
+	 * @var array
+	 */
 	public static $index;
+	/**
+	 * The actual guides
+	 *
+	 * This array contains all the guides themselves and various information about them
+	 *
+	 * @var array
+	 */
 	public static $guides;
+	/**
+	 * The number of guides that exist
+	 *
+	 * @var int
+	 */
 	public static $numGuides = 0;
 	
+	/**
+	 * Initializes the static class members
+	 *
+	 * Also checks to make sure the config.yml file exists in the current 
+	 * working directory
+	 *
+	 * @return void
+	 */
 	public static function init ()
 	{
 		if (!file_exists(DOCUMENTR_ROOT . '/config.yml'))
@@ -32,6 +90,11 @@ class Documentr
 		self::$index	= array();
 	}
 	
+	/**
+	 * Parses the config file
+	 *
+	 * @return void
+	 */
 	public static function parseConfig ()
 	{
 		foreach (self::$config['guides'] as $section => $group)
@@ -48,6 +111,7 @@ class Documentr
 			self::$index[$section] = $indexArray;
 		}
 		
+		// see what guides actually exist in the filesystem
 		foreach (self::$guides as $name => $guide)
 		{
 			if (file_exists(self::$config['source_dir'] . '/' . $guide['source_file']))
@@ -61,6 +125,13 @@ class Documentr
 		}
 	}
 	
+	/**
+	 * Cleans the output directory
+	 *
+	 * Also copies the base template styles, images, etc., as well as local images to the output dir
+	 *
+	 * @return void
+	 */
 	public static function cleanOutputDir ()
 	{
 		shell_exec('rm -rf ' . self::$config['output_dir'] . '/*');
@@ -74,6 +145,11 @@ class Documentr
 		}
 	}
 	
+	/**
+	 * Builds all the guides
+	 *
+	 * @return void
+	 */
 	public static function buildGuides ()
 	{
 		foreach (self::$guides as $name => $guide)
@@ -128,6 +204,11 @@ class Documentr
 		}
 	}
 	
+	/**
+	 * Builds the home page
+	 *
+	 * @return void
+	 */
 	public static function buildHome ()
 	{
 		// make the static items available locally...
@@ -145,6 +226,12 @@ class Documentr
 		fclose($handle);
 	}
 	
+	/**
+	 * Builds the table of contents for a guide
+	 *
+	 * @param string $contents The body to parse
+	 * @return array
+	 */
 	protected static function buildToc ($contents)
 	{
 		preg_match_all('/<h([1-4])>(.*?)<\/h[1-4]>/', $contents, $matches);
@@ -183,11 +270,16 @@ class Documentr
 		
 		return array($contents, $toc);
 	}
-}
-
-function microtime_float () 
-{ 
-    list ($msec, $sec) = explode(' ', microtime()); 
-    $microtime = (float)$msec + (float)$sec; 
-    return $microtime; 
+	
+	/**
+	 * Returns the current microtime as a float
+	 *
+	 * @return float
+	 */
+	public static function microtime_float () 
+	{ 
+	    list ($msec, $sec) = explode(' ', microtime()); 
+	    $microtime = (float)$msec + (float)$sec; 
+	    return $microtime; 
+	}
 }

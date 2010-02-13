@@ -1,8 +1,22 @@
 <?php
+/**
+ * Documentr Processor File
+ *
+ * This is the main processor file for the Documentr package.  It more or less
+ * runs the various functions needed to generate documentation.
+ *
+ * @package Documentr
+ * @author Ian Selby <ian@gen-x-design.com>
+ * @copyright 2010 Ian Selby
+ * @license http://www.opensource.org/licenses/mit-license.php
+ * @version 0.1.0
+ * @link http://documentr.gxdlabs.com
+ *
+ */
 
 require_once dirname(__FILE__) . '/Documentr.inc.php';
 
-$start = microtime_float();
+$start = Documentr::microtime_float();
 
 // get everything set up
 Documentr::init();
@@ -25,7 +39,7 @@ echo "Building home page...";
 Documentr::buildHome();
 echo "\tdone\n";
 
-$end = microtime_float(); 
+$end = Documentr::microtime_float(); 
 echo "\n----------------------------\n";
 echo "Docs generated in " . round($end-$start, 5) . " seconds.\n";
 echo "\n";
