@@ -30,7 +30,7 @@
 			<div class="left-col">
 			<?php
 				$numDisplayed 	= 0;
-				$splitNum		= abs(Documentr::$numGuides / 2);
+				$splitNum		= floor(Documentr::$numGuides / 2);
 				$haveSplit		= false;
 				
 				foreach ($index as $section => $guide):
