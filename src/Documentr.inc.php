@@ -168,7 +168,7 @@ class Documentr
 				// check for an introduction / body
 				if (stristr($contents, '-----BODY-----') !== false)
 				{
-					$parts = explode('-----BODY-----', $contents);
+					$parts = explode('-----BODY-----', $contents, 2);
 					
 					$header = $parts[0];
 					$body	= $parts[1];
