@@ -1,90 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.8.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
-	<name>Documentr</name>
-	<channel>pear.gxdlabs.com</channel>
-	<summary>Generate Sexy Documentation From Markdown</summary>
-	<description>
-		Generate Sexy Documentation From Markdown
-	</description>
-	
-	<lead>
-		<name>Ian Selby</name>
-		<user>masterexploder</user>
-		<email>ian@gen-x-design.com</email>
-		<active>yes</active>
-	</lead>
-	
-	<date>2010-02-12</date>
-	<time>17:00:00</time>
-	
-	<version>
-		<release>0.1.1</release>
-		<api>0.1.1</api>
-	</version>
-	
-	<stability>
-		<release>beta</release>
-		<api>beta</api>
-	</stability>
-	
-	<license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
-	<notes>-</notes>
-	
-	<contents>
-		<dir name="/" baseinstalldir="Documentr">
-			<file name="Documentr.inc.php" role="php" />
-			<file name="documentr.php" role="php" />
-			<file baseinstalldir="/" name="documentr" role="script" />
-			
-			<dir name="lib">
-				<dir name="markdown">
-					<file name="markdown.php" role="php" />
-				</dir>
-				<dir name="sfy_yaml">
-					<file name="LICENSE" role="php" />
-					<file name="sfYaml.php" role="php" />
-					<file name="sfYamlDumper.php" role="php" />
-					<file name="sfYamlInline.php" role="php" />
-					<file name="sfYamlParser.php" role="php" />
-				</dir>
-			</dir>
-			
-			<dir name="templates">
-				<dir name="default">
-					<file name="footer.php" role="php" />
-					<file name="guide.php" role="php" />
-					<file name="header.php" role="php" />
-					<file name="home.php" role="php" />
-					<file name="styles.css" role="php" />
-					
-					<dir name="images">
-						<file name="chapters_icon.gif" role="php" />
-						<file name="tab_grey.gif" role="php" />
-						<file name="tab_info.gif" role="php" />
-						<file name="tab_note.gif" role="php" />
-						<file name="tab_red.gif" role="php" />
-						<file name="tab_yellow.gif" role="php" />
-					</dir>
-					
-					<dir name="scripts">
-						<file name="mootools-1.2.4-core-yc.js" role="php" />
-						<file name="mootools-1.2.4.4-more.js" role="php" />
-					</dir>
-				</dir>
-			</dir>
-		</dir>
-	</contents>
-
-	<dependencies>
-		<required>
-			<php>
-				<min>5.2.0</min>
-			</php>
-			<pearinstaller>
-				<min>1.4.0</min>
-			</pearinstaller>
-		</required>
-	</dependencies>
-	
-	<phprelease />
+<package packagerversion="1.9.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Documentr</name>
+ <channel>pear.gxdlabs.com</channel>
+ <summary>Generate Sexy Documentation From Markdown</summary>
+ <description>Generate Sexy Documentation From Markdown</description>
+ <lead>
+  <name>Ian Selby</name>
+  <user>masterexploder</user>
+  <email>ian@gen-x-design.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2010-02-16</date>
+ <time>14:40:30</time>
+ <version>
+  <release>0.1.2</release>
+  <api>0.1.2</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
+ <notes>
+-
+ </notes>
+ <contents>
+  <dir baseinstalldir="Documentr" name="/">
+   <file baseinstalldir="Documentr" md5sum="5f9c050e6d13f4bbf4c352ce6a10c363" name="docs/getting_started.html" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="108a6b2c696c3d6f25647c40ca545145" name="docs/index.html" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="c7e6ef05fcf20d4f0c0a86940cc0e84f" name="docs/styles.css" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="29cdb9d14fd6e1e9b3065318c1c7aa5e" name="docs/images/chapters_icon.gif" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="1d4632b4b39bece1df14a81212c97e20" name="docs/images/tab_grey.gif" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="a31572571d06c475060a340361362440" name="docs/images/tab_info.gif" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="a1647f6b869554ffa1eb0c0abb264015" name="docs/images/tab_note.gif" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="79a50aaf37643ba9bb8baa8438e27b73" name="docs/images/tab_red.gif" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="4478f2444a554e7747072e10b3e05777" name="docs/images/tab_yellow.gif" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="4651681f4eede00bb70399c085251c91" name="docs/scripts/mootools-1.2.4-core-yc.js" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="f652434421295fd4f0dc5526a44424de" name="docs/scripts/mootools-1.2.4.4-more.js" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="86f87d6c1e15450b57606c43bfdd4e05" name="lib/markdown/markdown.php" role="php" />
+   <file baseinstalldir="Documentr" md5sum="4828aab1cb984d8a5d29e1c0df3cdcbd" name="lib/sfy_yaml/LICENSE" role="php" />
+   <file baseinstalldir="Documentr" md5sum="2b7116a9f3bf6f9e8cd914c81bf79830" name="lib/sfy_yaml/sfYaml.php" role="php" />
+   <file baseinstalldir="Documentr" md5sum="28196a0efdcea67d72e1eaf71e936958" name="lib/sfy_yaml/sfYamlDumper.php" role="php" />
+   <file baseinstalldir="Documentr" md5sum="7b7e261ba633a5a960ca285534d8d1b8" name="lib/sfy_yaml/sfYamlInline.php" role="php" />
+   <file baseinstalldir="Documentr" md5sum="748a3ddcbfd12225292424bc233abccb" name="lib/sfy_yaml/sfYamlParser.php" role="php" />
+   <file baseinstalldir="Documentr" md5sum="3af0b42216ed1226e59e508d3d513699" name="templates/default/footer.php" role="php" />
+   <file baseinstalldir="Documentr" md5sum="63a199a111eefa7a31b05ff8184a2f74" name="templates/default/guide.php" role="php" />
+   <file baseinstalldir="Documentr" md5sum="7c7b7552822a1fdf04d1574f0264aaed" name="templates/default/header.php" role="php" />
+   <file baseinstalldir="Documentr" md5sum="59a8ce96d3536d4c6b453f246329e4c6" name="templates/default/home.php" role="php" />
+   <file baseinstalldir="Documentr" md5sum="c7e6ef05fcf20d4f0c0a86940cc0e84f" name="templates/default/styles.css" role="php" />
+   <file baseinstalldir="Documentr" md5sum="29cdb9d14fd6e1e9b3065318c1c7aa5e" name="templates/default/images/chapters_icon.gif" role="php" />
+   <file baseinstalldir="Documentr" md5sum="1d4632b4b39bece1df14a81212c97e20" name="templates/default/images/tab_grey.gif" role="php" />
+   <file baseinstalldir="Documentr" md5sum="a31572571d06c475060a340361362440" name="templates/default/images/tab_info.gif" role="php" />
+   <file baseinstalldir="Documentr" md5sum="a1647f6b869554ffa1eb0c0abb264015" name="templates/default/images/tab_note.gif" role="php" />
+   <file baseinstalldir="Documentr" md5sum="79a50aaf37643ba9bb8baa8438e27b73" name="templates/default/images/tab_red.gif" role="php" />
+   <file baseinstalldir="Documentr" md5sum="4478f2444a554e7747072e10b3e05777" name="templates/default/images/tab_yellow.gif" role="php" />
+   <file baseinstalldir="Documentr" md5sum="4651681f4eede00bb70399c085251c91" name="templates/default/scripts/mootools-1.2.4-core-yc.js" role="php" />
+   <file baseinstalldir="Documentr" md5sum="f652434421295fd4f0dc5526a44424de" name="templates/default/scripts/mootools-1.2.4.4-more.js" role="php" />
+   <file baseinstalldir="/" md5sum="7732e8f60f50bf9b5aa94feb33d91809" name="documentr" role="script" />
+   <file baseinstalldir="Documentr" md5sum="cf285e3fbf30c22f7945c00386c8029f" name="Documentr.inc.php" role="php" />
+   <file baseinstalldir="Documentr" md5sum="6b01493e97c63cce4efadb6daa350627" name="documentr.php" role="php" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>0.1.1</release>
+    <api>0.1.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2010-02-16</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
+   <notes>
+-
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.1.2</release>
+    <api>0.1.2</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2010-02-16</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
+   <notes>
+-
+   </notes>
+  </release>
+ </changelog>
 </package>

@@ -20,8 +20,8 @@ $packageXml->setSummary('Generate Sexy Documentation From Markdown');
 $packageXml->setDescription('Generate Sexy Documentation From Markdown');
 $packageXml->setChannel('pear.gxdlabs.com');
 
-$packageXml->setAPIVersion('0.1.1');
-$packageXml->setReleaseVersion('0.1.1');
+$packageXml->setAPIVersion('0.1.2');
+$packageXml->setReleaseVersion('0.1.2');
 $packageXml->setReleaseStability('beta');
 $packageXml->setAPIStability('beta');
 
