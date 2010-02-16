@@ -1,0 +1,27 @@
+# Project Name
+name: "Documentr"
+introduction: "Documentr allows you to generate sexy, useful end-user documentation for your applications. Simply write some markdown and build a simple config, and Documentr does the rest."
+copyright_message: 'Copyright &copy; 2010 <a href="http://www.gen-x-design.com">Ian Selby</a>'
+template: "default"
+output_dir: "../src/docs"
+source_dir: "."
+
+guides:
+    Start Here:
+        Getting Started:
+            source_file: "getting_started.md"
+            description: "An overview of Documentr including installation and setting up a documentation project"
+        Writing & Generating Documentation:
+            source_file: "generating_documenatation.md"
+            description: "How to write and generate documentation using Documentr"
+            wip: true  
+    Digging Deeper:
+        Including Images:
+            source_file: "including_images.md"
+            description: "How to include images in your documentation"
+        Special Output Styles:
+            source_file: "output_styles.md"
+            description: "Learn about the special output styles available with the built-in templates for your documenation"
+        Create Your Own Templates:
+            source_file: "create_templates.md"
+            description: "This guide covers how to create your own templates."
