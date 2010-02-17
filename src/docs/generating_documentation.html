@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+	<!-- Copyright 2009 eMeter Corporation. All Rights Reserved. -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Documentr - Writing & Generating Documentation</title>
+
+	<link href="styles.css" rel="stylesheet" media="screen" type="text/css" />	
+	
+	<script type="text/javascript" src="scripts/mootools-1.2.4-core-yc.js"></script>
+	<script type="text/javascript" src="scripts/mootools-1.2.4.4-more.js"></script>
+	<script type="text/javascript">
+		window.addEvent('domready', function () 
+		{
+			$('guide-index').position({ relativeTo: 'guide-index-link', position: 'upperRight', edge: 'upperRight' });
+			
+			$('guide-index-open').addEvent('click', function () { $('guide-index').show(); });
+			$('guide-index-close').addEvent('click', function () { $('guide-index').hide(); });
+		});
+	</script>
+</head>
+
+<body>
+
+<div id="nonFooter">
+<div class="header-wrap">
+	<div class="header">
+		<div class="guide-index" id="guide-index" style="display: none">
+			<h2><a href="#" id="guide-index-close">Guides Index</a></h2>
+			<div class="left-col">
+							<h3>Start Here</h3>
+															<a href="getting_started.html">Getting Started</a>
+					<br />
+																			<a href="generating_documentation.html">Writing & Generating Documentation</a>
+					<br />
+												</div><div class="right-col">							<h3>Digging Deeper</h3>
+															Including Images					<br />
+																			Special Output Styles					<br />
+																			Create Your Own Templates					<br />
+																		
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		
+		<h1>Documentr</h1>
+	
+		<ul class="nav">
+			<li><a href="index.html">Home</a></li>
+			<li class="index" id="guide-index-link">
+				<a href="#" id="guide-index-open">Guides Index</a>
+			</li>
+		</ul>
+		
+		<div class="clearfix"></div>
+	</div>
+</div>
+<div class="intro-wrap">
+	<div class="intro">
+		<div class="disclaimer">
+			<div class="toc">
+				<h3>Chapters</h3>
+				<ol>
+										<li>
+						<a href="#writing-documentation">Writing Documentation</a>
+												<ul>
+														<li><a href="#documentr-markdown-files">Documentr Markdown Files</a></li>
+													</ul>
+											</li>
+										<li>
+						<a href="#generating-documentation">Generating Documentation</a>
+											</li>
+									</ol>
+			</div>
+		</div>
+		<h2>Writing & Generating Documentation</h2>
+		<p>This guide covers writing and generating documentation with Documentr.  After reading this guide, you should be able to 
+successfully author and generate your documentation.</p>
+	</div>
+</div>
+
+<div class="body">
+	<div class="content">
+		<p>If you haven't read the <a href="getting_started.html">Getting Started</a> guide yet, you should do so now.</p>
+
+<h1 id="writing-documentation">Writing Documentation</h1>
+
+<p>Writing docs is a royal pain, but it doesn't have to be... that's why I wrote this library in the first place, and, hopefully, 
+why you're reading this.  I figured it would be much easier to write documentation in an easy, widely used format and leave the
+formatting to something else.</p>
+
+<p>The easy authoring format I chose was Markdown.  It was created by <a href="http://daringfireball.net">John Gruber</a>, and has become more
+and more popular, especially in the Ruby and GitHub community.  From the <a href="http://daringfireball.net/projects/markdown/">project site</a>:</p>
+
+<blockquote>Markdown is a text-to-HTML conversion tool for web writers. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML).</blockquote>
+
+<p>I'll leave it up to you to learn the syntax if you aren't familiar with it already, the reference is located here: <a href="http://daringfireball.net/projects/markdown/syntax">http://daringfireball.net/projects/markdown/syntax</a></p>
+
+<h2 id="documentr-markdown-files">Documentr Markdown Files</h2>
+
+<p>Writing your documentation for Documentr is as simple as creating markdown files.  There's only one special bit of syntax within these files, and it's completely optional (but shouldn't be
+skipped, as your documentation won't be as sexy).</p>
+
+<p>Basically, a markdown file for a guide consists of two parts: the header, and the body.  The header is the text shown directly under the guide title and is a great way to provide an overview of
+the guide itself. The rest of your markdown file is the actual body of the guide.</p>
+
+<p>So, what does your markdown file need to look like to accomplish all this?  Glad you asked:</p>
+
+<pre><code>Put whatever introduction text you want here.  
+Can be as long or short as you'd like
+
+-----BODY-----
+
+Put your body here.  Everything below the above 
+delimeter will be the body of your guide.
+</code></pre>
+
+<p>That's it.</p>
+
+<h1 id="generating-documentation">Generating Documentation</h1>
+
+<p>Generating your docs is probably the easiest thing to do with Documentr (which is the point, right?).  Assuming you've got everything set up right in your
+config.yml file, you need only navigate to the directory the config.yml file is located in in a terminal, and run:</p>
+
+<pre><code>documentr
+</code></pre>
+
+<p>Right now, if there are any issues, you'll get nasty error messages from PHP, but that's likely to change down the road as I put more effort into 
+robustness.  However, if everything runs without error, you'll see output similar to:</p>
+
+<pre><code>&gt;&gt;&gt; Creating Documentation For Documentr &lt;&lt;&lt;
+
+Clearing output directory...    done
+Building guide pages...
+ [build] Getting Started... done
+ [build] Writing &amp; Generating Documentation...  done
+ [skip] Including Images 
+ [skip] Special Output Styles 
+ [skip] Create Your Own Templates 
+Building home page...   done
+
+----------------------------
+Docs generated in 0.07114 seconds.
+</code></pre>
+
+<p>At this point, your docs are built inside the output directory and you can open them in your browser of choice, publish them to the web, or whatever it is
+you want to do with them.</p>
+	</div>
+</div>
+</div>
+
+<div class="footer-wrap">
+	<div class="footer">
+		
+		<div class="copyright">
+			Copyright &copy; 2010 <a href="http://www.gen-x-design.com">Ian Selby</a>		</div>
+		<div class="powered-by">
+			Generated by <a href="#">Documentr</a>
+		</div>
+		
+		<div class="clearfix"></div>
+	</div>
+</div>
+</body>
+</html>

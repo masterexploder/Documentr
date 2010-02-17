@@ -12,9 +12,9 @@ guides:
             source_file: "getting_started.md"
             description: "An overview of Documentr including installation and setting up a documentation project"
         Writing & Generating Documentation:
-            source_file: "generating_documenatation.md"
+            source_file: "generating_documentation.md"
             description: "How to write and generate documentation using Documentr"
-            wip: true  
+            wip: false  
     Digging Deeper:
         Including Images:
             source_file: "including_images.md"
