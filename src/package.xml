@@ -14,10 +14,10 @@
   <active>yes</active>
  </lead>
  <date>2010-02-16</date>
- <time>15:48:52</time>
+ <time>17:18:15</time>
  <version>
-  <release>0.1.3</release>
-  <api>0.1.3</api>
+  <release>0.1.4</release>
+  <api>0.1.4</api>
  </version>
  <stability>
   <release>beta</release>
@@ -29,9 +29,9 @@
  </notes>
  <contents>
   <dir baseinstalldir="Documentr" name="/">
-   <file baseinstalldir="Documentr" md5sum="379fc6cbc8976016429485bf7cb29eea" name="docs/generating_documenatation.html" role="doc" />
-   <file baseinstalldir="Documentr" md5sum="a3df91bc2f16e6e6f510413e39f8ae04" name="docs/getting_started.html" role="doc" />
-   <file baseinstalldir="Documentr" md5sum="9525d1b5609fc45a30cc339ba56032e0" name="docs/index.html" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="34dc5f10d440b5c1339de71d59db7d41" name="docs/generating_documentation.html" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="be60c02204bfc013105bda9d36b71643" name="docs/getting_started.html" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="1389e42af1a8c46cb9a73fcb0d4b5eb0" name="docs/index.html" role="doc" />
    <file baseinstalldir="Documentr" md5sum="c7e6ef05fcf20d4f0c0a86940cc0e84f" name="docs/styles.css" role="doc" />
    <file baseinstalldir="Documentr" md5sum="29cdb9d14fd6e1e9b3065318c1c7aa5e" name="docs/images/chapters_icon.gif" role="doc" />
    <file baseinstalldir="Documentr" md5sum="1d4632b4b39bece1df14a81212c97e20" name="docs/images/tab_grey.gif" role="doc" />
@@ -111,6 +111,21 @@
    <version>
     <release>0.1.3</release>
     <api>0.1.3</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2010-02-16</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
+   <notes>
+-
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.1.4</release>
+    <api>0.1.4</api>
    </version>
    <stability>
     <release>beta</release>

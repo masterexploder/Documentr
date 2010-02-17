@@ -6,6 +6,7 @@ module DocumentrHelper
   DIST_DIR        = File.join(ROOT_DIR, 'dist')
   DOCS_DIR        = File.join(ROOT_DIR, 'docs')
   DOCS_OUTPUT_DIR = File.join(SRC_DIR, 'docs')
+  BUILD_DIR       = File.join(ROOT_DIR, 'build/Documentr')
   
   def self.package
     puts "\n>>> BUILDING PEAR PACKAGE <<<"
@@ -21,12 +22,12 @@ module DocumentrHelper
   def self.tarball
     puts "\n>>> GENERATING STANDALONE TARBALL <<<"
     
-    `mkdir -p #{ROOT_DIR}/build`
+    `mkdir -p #{BUILD_DIR}`
     `rm -rf #{ROOT_DIR}/buid/*`
-    `cp -rf #{SRC_DIR} #{ROOT_DIR}/build`
-    `rm -f #{ROOT_DIR}/build/src/package.xml`
-    `cp -rf #{ROOT_DIR}/sample #{ROOT_DIR}/build`
-    `rm -f #{ROOT_DIR}/build/sample/output/`
+    `cp -rf #{SRC_DIR} #{BUILD_DIR}`
+    `rm -f #{BUILD_DIR}/src/package.xml`
+    `cp -rf #{ROOT_DIR}/sample #{BUILD_DIR}`
+    `rm -f #{BUILD_DIR}/sample/output/`
     system("export COPYFILE_DISABLE=true && cd #{ROOT_DIR}/build && tar -zcvf Documentr.tar.gz .")
     `cp #{ROOT_DIR}/build/Documentr.tar.gz #{DIST_DIR}`
     `rm -rf #{ROOT_DIR}/build`
