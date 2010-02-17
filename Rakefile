@@ -17,6 +17,20 @@ module DocumentrHelper
     puts "\n>>> GENERATING DOCUMENTATION <<<"
     system "cd #{DOCS_DIR} && documentr"
   end
+  
+  def self.tarball
+    puts "\n>>> GENERATING STANDALONE TARBALL <<<"
+    
+    `mkdir -p #{ROOT_DIR}/build`
+    `rm -rf #{ROOT_DIR}/buid/*`
+    `cp -rf #{SRC_DIR} #{ROOT_DIR}/build`
+    `rm -f #{ROOT_DIR}/build/src/package.xml`
+    `cp -rf #{ROOT_DIR}/sample #{ROOT_DIR}/build`
+    `rm -f #{ROOT_DIR}/build/sample/output/`
+    system("export COPYFILE_DISABLE=true && cd #{ROOT_DIR}/build && tar -zcvf Documentr.tar.gz .")
+    `cp #{ROOT_DIR}/build/Documentr.tar.gz #{DIST_DIR}`
+    `rm -rf #{ROOT_DIR}/build`
+  end
 end
 
 
@@ -25,6 +39,11 @@ namespace :build do
   desc "Builds the Pear Package"
   task :package do
     DocumentrHelper.package
+  end
+  
+  desc "Builds Standalone Tarball"
+  task :tarball do
+    DocumentrHelper.tarball
   end
   
   desc "Generate Documentation"
