@@ -53,6 +53,6 @@ namespace :build do
 end
 
 desc "Builds Documentr"
-task :build => ['build:package', 'build:docs']
+task :build => ['build:docs', 'build:package', 'build:tarball']
 
 task :default => :build
