@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+	<!-- Copyright 2009 eMeter Corporation. All Rights Reserved. -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Documentr - Special Output Styles</title>
+
+	<link href="styles.css" rel="stylesheet" media="screen" type="text/css" />	
+	
+	<script type="text/javascript" src="scripts/mootools-1.2.4-core-yc.js"></script>
+	<script type="text/javascript" src="scripts/mootools-1.2.4.4-more.js"></script>
+	<script type="text/javascript">
+		window.addEvent('domready', function () 
+		{
+			$('guide-index').position({ relativeTo: 'guide-index-link', position: 'upperRight', edge: 'upperRight' });
+			
+			$('guide-index-open').addEvent('click', function () { $('guide-index').show(); });
+			$('guide-index-close').addEvent('click', function () { $('guide-index').hide(); });
+		});
+	</script>
+</head>
+
+<body>
+
+<div id="nonFooter">
+<div class="header-wrap">
+	<div class="header">
+		<div class="guide-index" id="guide-index" style="display: none">
+			<h2><a href="#" id="guide-index-close">Guides Index</a></h2>
+			<div class="left-col">
+							<h3>Start Here</h3>
+															<a href="getting_started.html">Getting Started</a>
+					<br />
+																			<a href="generating_documentation.html">Writing & Generating Documentation</a>
+					<br />
+												</div><div class="right-col">							<h3>Digging Deeper</h3>
+															<a href="including_images.html">Including Images</a>
+					<br />
+																			<a href="output_styles.html">Special Output Styles</a>
+					<br />
+																			<a href="create_templates.html">Create Your Own Templates</a>
+					<br />
+																		
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		
+		<h1>Documentr</h1>
+	
+		<ul class="nav">
+			<li><a href="index.html">Home</a></li>
+			<li class="index" id="guide-index-link">
+				<a href="#" id="guide-index-open">Guides Index</a>
+			</li>
+		</ul>
+		
+		<div class="clearfix"></div>
+	</div>
+</div>
+<div class="intro-wrap">
+	<div class="intro">
+		<div class="disclaimer">
+			<div class="toc">
+				<h3>Chapters</h3>
+				<ol>
+										<li>
+						<a href="#output-styles">Output Styles</a>
+												<ul>
+														<li><a href="#block-quotes">Block Quotes</a></li>
+														<li><a href="#notes">Notes</a></li>
+														<li><a href="#exclamations">Exclamations</a></li>
+														<li><a href="#info">Info</a></li>
+														<li><a href="#warning">Warning</a></li>
+													</ul>
+											</li>
+									</ol>
+			</div>
+		</div>
+		<h2>Special Output Styles</h2>
+		<p>This guide covers the special output styles available in your documentation.  These styles are
+all for special call-outs that you can use in your documentation and are meant to help make 
+your docs super-awesome</p>
+	</div>
+</div>
+
+<div class="body">
+	<div class="content">
+		<p>If you haven't read the <a href="getting_started.html">Getting Started</a> guide yet, you should do so now.</p>
+
+<h1 id="output-styles">Output Styles</h1>
+
+<p>If you've been reading these docs thoroughly, you've no doubt seen that there are some nice
+"callout" block styles used throughout.  The good news is that these are also available for
+your use in your own docs.  This guide covers those styles and how to use them.</p>
+
+<p>The special styles available, briefly, are:</p>
+
+<ul>
+<li>Block Quotes</li>
+<li>Notes</li>
+<li>Exclamations</li>
+<li>Info</li>
+<li>Warnings</li>
+</ul>
+
+<h2 id="block-quotes">Block Quotes</h2>
+
+<p>Block quotes aren't really that special, but they do have their own style.  To use them, you can
+either use the standard markdown syntax for block quotes, or the html equivalent.</p>
+
+<h4>Syntax</h4>
+
+<p>The syntax for a block quote is:</p>
+
+<pre><code>&gt;   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+&gt;   eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</code></pre>
+
+<h4>Sample Output</h4>
+
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</blockquote>
+
+<h2 id="notes">Notes</h2>
+
+<p>The notes style is good for calling out important, non-critical information.  I look at it as a way
+to draw more attention to something that you'd like your readers to be aware of, that they might potentially
+miss if they were skimming your docs.</p>
+
+<h4>Syntax</h4>
+
+<p>To produce a note, you'll need to use the HTML for a block quote, and give it a certain css class:</p>
+
+<pre><code>&lt;blockquote class="note"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do&lt;/blockquote&gt;
+</code></pre>
+
+<h4>Sample Output</h4>
+
+<blockquote class="note">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
+
+<h2 id="exclamations">Exclamations</h2>
+
+<p>These are similar to notes, but have a slightly different icon... an exclamation!</p>
+
+<h4>Syntax</h4>
+
+<p>To produce an exclamation, you'll need to use the HTML for a block quote, and give it a certain css class:</p>
+
+<pre><code>&lt;blockquote class="ticket"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do&lt;/blockquote&gt;
+</code></pre>
+
+<h4>Sample Output</h4>
+
+<blockquote class="ticket">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
+
+<h2 id="info">Info</h2>
+
+<p>Info messages use a blue style, rather than the yellow of the prior two.</p>
+
+<h4>Syntax</h4>
+
+<p>To produce an info block, you'll need to use the HTML for a block quote, and give it a certain css class:</p>
+
+<pre><code>&lt;blockquote class="info"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do&lt;/blockquote&gt;
+</code></pre>
+
+<h4>Sample Output</h4>
+
+<blockquote class="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
+
+<h2 id="warning">Warning</h2>
+
+<p>Warning messages use a red style, and are very hard to miss in your docs.</p>
+
+<h4>Syntax</h4>
+
+<p>To produce a warning block, you'll need to use the HTML for a block quote, and give it a certain css class:</p>
+
+<pre><code>&lt;blockquote class="warning"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do&lt;/blockquote&gt;
+</code></pre>
+
+<h4>Sample Output</h4>
+
+<blockquote class="warning">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
+	</div>
+</div>
+</div>
+
+<div class="footer-wrap">
+	<div class="footer">
+		
+		<div class="copyright">
+			Copyright &copy; 2010 <a href="http://www.gen-x-design.com">Ian Selby</a>		</div>
+		<div class="powered-by">
+			Generated by <a href="#">Documentr</a>
+		</div>
+		
+		<div class="clearfix"></div>
+	</div>
+</div>
+</body>
+</html>

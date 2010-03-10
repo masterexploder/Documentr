@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+	<!-- Copyright 2009 eMeter Corporation. All Rights Reserved. -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Documentr - Including Images</title>
+
+	<link href="styles.css" rel="stylesheet" media="screen" type="text/css" />	
+	
+	<script type="text/javascript" src="scripts/mootools-1.2.4-core-yc.js"></script>
+	<script type="text/javascript" src="scripts/mootools-1.2.4.4-more.js"></script>
+	<script type="text/javascript">
+		window.addEvent('domready', function () 
+		{
+			$('guide-index').position({ relativeTo: 'guide-index-link', position: 'upperRight', edge: 'upperRight' });
+			
+			$('guide-index-open').addEvent('click', function () { $('guide-index').show(); });
+			$('guide-index-close').addEvent('click', function () { $('guide-index').hide(); });
+		});
+	</script>
+</head>
+
+<body>
+
+<div id="nonFooter">
+<div class="header-wrap">
+	<div class="header">
+		<div class="guide-index" id="guide-index" style="display: none">
+			<h2><a href="#" id="guide-index-close">Guides Index</a></h2>
+			<div class="left-col">
+							<h3>Start Here</h3>
+															<a href="getting_started.html">Getting Started</a>
+					<br />
+																			<a href="generating_documentation.html">Writing & Generating Documentation</a>
+					<br />
+												</div><div class="right-col">							<h3>Digging Deeper</h3>
+															<a href="including_images.html">Including Images</a>
+					<br />
+																			<a href="output_styles.html">Special Output Styles</a>
+					<br />
+																			<a href="create_templates.html">Create Your Own Templates</a>
+					<br />
+																		
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		
+		<h1>Documentr</h1>
+	
+		<ul class="nav">
+			<li><a href="index.html">Home</a></li>
+			<li class="index" id="guide-index-link">
+				<a href="#" id="guide-index-open">Guides Index</a>
+			</li>
+		</ul>
+		
+		<div class="clearfix"></div>
+	</div>
+</div>
+<div class="intro-wrap">
+	<div class="intro">
+		<div class="disclaimer">
+			<div class="toc">
+				<h3>Chapters</h3>
+				<ol>
+										<li>
+						<a href="#including-images">Including Images</a>
+												<ul>
+														<li><a href="#creating-the-images-directory">Creating the Images Directory</a></li>
+														<li><a href="#including-images-in-your-documentation">Including Images in Your Documentation</a></li>
+													</ul>
+											</li>
+									</ol>
+			</div>
+		</div>
+		<h2>Including Images</h2>
+		<p>This guide covers including images in your documentation.  Documentr can automatically copy images included with 
+your documentation source code files when it compiles your documentation.</p>
+	</div>
+</div>
+
+<div class="body">
+	<div class="content">
+		<p>If you haven't read the <a href="getting_started.html">Getting Started</a> guide yet, you should do so now.</p>
+
+<h1 id="including-images">Including Images</h1>
+
+<p>Including images is also, like all things with Documentr, designed to be as painless as possible.  Essentially, you 
+need only include an images directory with your source and it will be included with your parsed output.</p>
+
+<h2 id="creating-the-images-directory">Creating the Images Directory</h2>
+
+<p>There's really nothing you need to do here, other than create a folder called <code>images</code> that sits alongside your
+documentation source files (the markdown files).  Using the sample included with the source code as an example, 
+the docs directory currently looks like:</p>
+
+<pre><code>/
+    config.yml
+    /docs
+        getting_started.md
+    /output
+</code></pre>
+
+<p>If you wanted to include images, just create a new directory...</p>
+
+<pre><code>/
+    config.yml
+    /docs
+        /images
+        getting_started.md
+    /output
+</code></pre>
+
+<p>That's it!</p>
+
+<h2 id="including-images-in-your-documentation">Including Images in Your Documentation</h2>
+
+<p>Once you've got the images directory created, simply drop whatever images you'd like in there.  After that, 
+you need only refer to them using standard markdown syntax.  For example, the following code:</p>
+
+<pre><code>!["New Pet" From XKCD - http://xkcd.com/413/](images/new_pet.png)
+</code></pre>
+
+<p>Gives you the following:</p>
+
+<p><img src="images/new_pet.png" alt="&quot;New Pet&quot; From XKCD - http://xkcd.com/413/" /></p>
+
+<p><em>Note that the above image is borrowed from <a href="http://xkcd.com/413/">XKCD</a></em></p>
+
+<p>For more info on the markdown syntax for images, visit <a href="http://daringfireball.net/projects/markdown/syntax#img">http://daringfireball.net/projects/markdown/syntax#img</a></p>
+	</div>
+</div>
+</div>
+
+<div class="footer-wrap">
+	<div class="footer">
+		
+		<div class="copyright">
+			Copyright &copy; 2010 <a href="http://www.gen-x-design.com">Ian Selby</a>		</div>
+		<div class="powered-by">
+			Generated by <a href="#">Documentr</a>
+		</div>
+		
+		<div class="clearfix"></div>
+	</div>
+</div>
+</body>
+</html>
