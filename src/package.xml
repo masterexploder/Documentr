@@ -13,11 +13,11 @@
   <email>ian@gen-x-design.com</email>
   <active>yes</active>
  </lead>
- <date>2010-02-16</date>
- <time>17:18:15</time>
+ <date>2010-03-10</date>
+ <time>11:24:15</time>
  <version>
-  <release>0.1.4</release>
-  <api>0.1.4</api>
+  <release>0.1.5</release>
+  <api>0.1.5</api>
  </version>
  <stability>
   <release>beta</release>
@@ -29,11 +29,15 @@
  </notes>
  <contents>
   <dir baseinstalldir="Documentr" name="/">
-   <file baseinstalldir="Documentr" md5sum="34dc5f10d440b5c1339de71d59db7d41" name="docs/generating_documentation.html" role="doc" />
-   <file baseinstalldir="Documentr" md5sum="be60c02204bfc013105bda9d36b71643" name="docs/getting_started.html" role="doc" />
-   <file baseinstalldir="Documentr" md5sum="1389e42af1a8c46cb9a73fcb0d4b5eb0" name="docs/index.html" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="3838febb0f58932e5e7c31c7d35183b0" name="docs/create_templates.html" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="40fed28ea9c39adeb24747597f404e52" name="docs/generating_documentation.html" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="de0cf287521e33bd2c7515b8bcf704ef" name="docs/getting_started.html" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="eab61b72003b27aa13156b7f683ab931" name="docs/including_images.html" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="4be9175387a627f67b05715490bb2756" name="docs/index.html" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="4086ba92236e253d0b0d404880ed9a97" name="docs/output_styles.html" role="doc" />
    <file baseinstalldir="Documentr" md5sum="c7e6ef05fcf20d4f0c0a86940cc0e84f" name="docs/styles.css" role="doc" />
    <file baseinstalldir="Documentr" md5sum="29cdb9d14fd6e1e9b3065318c1c7aa5e" name="docs/images/chapters_icon.gif" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="661fa5ab0cf8cbfc482c5c6cada036a6" name="docs/images/new_pet.png" role="doc" />
    <file baseinstalldir="Documentr" md5sum="1d4632b4b39bece1df14a81212c97e20" name="docs/images/tab_grey.gif" role="doc" />
    <file baseinstalldir="Documentr" md5sum="a31572571d06c475060a340361362440" name="docs/images/tab_info.gif" role="doc" />
    <file baseinstalldir="Documentr" md5sum="a1647f6b869554ffa1eb0c0abb264015" name="docs/images/tab_note.gif" role="doc" />
@@ -132,6 +136,21 @@
     <api>beta</api>
    </stability>
    <date>2010-02-16</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
+   <notes>
+-
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.1.5</release>
+    <api>0.1.5</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2010-03-10</date>
    <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
    <notes>
 -
