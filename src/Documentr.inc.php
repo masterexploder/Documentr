@@ -139,7 +139,7 @@ class Documentr
 		}
 		else
 		{
-			self::$templateRoot = SRC_DIR . '/templates';
+			self::$templateRoot = SRC_ROOT . '/templates';
 		}
 	}
 	
