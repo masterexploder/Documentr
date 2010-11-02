@@ -68,6 +68,15 @@ class Documentr
 	 * @var int
 	 */
 	public static $numGuides = 0;
+	/**
+	 * The template root
+	 *
+	 * This will be either a template directory specified in the config, or
+	 * the default template root
+	 *
+	 * @var string
+	 */
+	public static $templateRoot	= null;
 	
 	/**
 	 * Initializes the static class members
@@ -123,6 +132,15 @@ class Documentr
 				self::$guides[$name]['exists'] = false;
 			}
 		}
+		
+		if (isset(self::$config['template_dir']))
+		{
+			self::$templateRoot = DOCUMENTR_ROOT . '/' . self::$config['template_dir'];
+		}
+		else
+		{
+			self::$templateRoot = SRC_DIR . '/templates';
+		}
 	}
 	
 	/**
@@ -135,9 +153,9 @@ class Documentr
 	public static function cleanOutputDir ()
 	{
 		shell_exec('rm -rf ' . self::$config['output_dir'] . '/*');
-		shell_exec('cp -f '  . SRC_ROOT . '/templates/' . self::$config['template'] . '/styles.css ' . self::$config['output_dir']);
-		shell_exec('cp -rf ' . SRC_ROOT . '/templates/' . self::$config['template'] . '/images ' . self::$config['output_dir']);
-		shell_exec('cp -rf ' . SRC_ROOT . '/templates/' . self::$config['template'] . '/scripts ' . self::$config['output_dir']);
+		shell_exec('cp -f '  . self::$templateRoot . '/' . self::$config['template'] . '/styles.css ' . self::$config['output_dir']);
+		shell_exec('cp -rf ' . self::$templateRoot . '/' . self::$config['template'] . '/images ' . self::$config['output_dir']);
+		shell_exec('cp -rf ' . self::$templateRoot . '/' . self::$config['template'] . '/scripts ' . self::$config['output_dir']);
 		
 		if (file_exists(DOCUMENTR_ROOT . '/' . self::$config['source_dir'] . '/images'))
 		{
@@ -187,7 +205,7 @@ class Documentr
 				list($body, $toc) = self::buildToc($body);
 				
 				ob_start();
-				include  SRC_ROOT . '/templates/' . self::$config['template'] . '/guide.php';
+				include  self::$templateRoot . '/' . self::$config['template'] . '/guide.php';
 				$contents = ob_get_contents();
 				ob_end_clean();
 				
@@ -217,7 +235,7 @@ class Documentr
 		$guides	= self::$guides;
 		
 		ob_start();
-		include  SRC_ROOT . '/templates/' . self::$config['template'] . '/home.php';
+		include  self::$templateRoot . '/' . self::$config['template'] . '/home.php';
 		$contents = ob_get_contents();
 		ob_end_clean();
 		

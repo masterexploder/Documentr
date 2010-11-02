@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+<package packagerversion="1.9.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
     http://pear.php.net/dtd/tasks-1.0.xsd
     http://pear.php.net/dtd/package-2.0
     http://pear.php.net/dtd/package-2.0.xsd">
@@ -13,11 +13,11 @@
   <email>ian@gen-x-design.com</email>
   <active>yes</active>
  </lead>
- <date>2010-03-10</date>
- <time>11:24:15</time>
+ <date>2010-11-02</date>
+ <time>11:25:52</time>
  <version>
-  <release>0.1.5</release>
-  <api>0.1.5</api>
+  <release>0.9</release>
+  <api>0.9</api>
  </version>
  <stability>
   <release>beta</release>
@@ -29,12 +29,12 @@
  </notes>
  <contents>
   <dir baseinstalldir="Documentr" name="/">
-   <file baseinstalldir="Documentr" md5sum="3838febb0f58932e5e7c31c7d35183b0" name="docs/create_templates.html" role="doc" />
-   <file baseinstalldir="Documentr" md5sum="40fed28ea9c39adeb24747597f404e52" name="docs/generating_documentation.html" role="doc" />
-   <file baseinstalldir="Documentr" md5sum="de0cf287521e33bd2c7515b8bcf704ef" name="docs/getting_started.html" role="doc" />
-   <file baseinstalldir="Documentr" md5sum="eab61b72003b27aa13156b7f683ab931" name="docs/including_images.html" role="doc" />
-   <file baseinstalldir="Documentr" md5sum="4be9175387a627f67b05715490bb2756" name="docs/index.html" role="doc" />
-   <file baseinstalldir="Documentr" md5sum="4086ba92236e253d0b0d404880ed9a97" name="docs/output_styles.html" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="4cc41523c952f314767fe6b564c3e1ba" name="docs/create_templates.html" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="e77f1a31984dd9c4591c18bf394ed549" name="docs/generating_documentation.html" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="1cc037fe18ab0fc68eb186eb96157d62" name="docs/getting_started.html" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="023fd60967c0127e834d28b27e3cbcac" name="docs/including_images.html" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="5155b7d24f9bea7f64626e8d62fb6c87" name="docs/index.html" role="doc" />
+   <file baseinstalldir="Documentr" md5sum="fca102580fb667f664ccbe8aa2794f5c" name="docs/output_styles.html" role="doc" />
    <file baseinstalldir="Documentr" md5sum="c7e6ef05fcf20d4f0c0a86940cc0e84f" name="docs/styles.css" role="doc" />
    <file baseinstalldir="Documentr" md5sum="29cdb9d14fd6e1e9b3065318c1c7aa5e" name="docs/images/chapters_icon.gif" role="doc" />
    <file baseinstalldir="Documentr" md5sum="661fa5ab0cf8cbfc482c5c6cada036a6" name="docs/images/new_pet.png" role="doc" />
@@ -65,7 +65,7 @@
    <file baseinstalldir="Documentr" md5sum="4651681f4eede00bb70399c085251c91" name="templates/default/scripts/mootools-1.2.4-core-yc.js" role="php" />
    <file baseinstalldir="Documentr" md5sum="f652434421295fd4f0dc5526a44424de" name="templates/default/scripts/mootools-1.2.4.4-more.js" role="php" />
    <file baseinstalldir="/" md5sum="7732e8f60f50bf9b5aa94feb33d91809" name="documentr" role="script" />
-   <file baseinstalldir="Documentr" md5sum="552f098b55c693ff136bc636be5a71ac" name="Documentr.inc.php" role="php" />
+   <file baseinstalldir="Documentr" md5sum="af6afcb22b5e594d5166a85a1aa6a32e" name="Documentr.inc.php" role="php" />
    <file baseinstalldir="Documentr" md5sum="6b01493e97c63cce4efadb6daa350627" name="documentr.php" role="php" />
   </dir>
  </contents>
@@ -151,6 +151,21 @@
     <api>beta</api>
    </stability>
    <date>2010-03-10</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
+   <notes>
+-
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.9</release>
+    <api>0.9</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2010-11-02</date>
    <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
    <notes>
 -
